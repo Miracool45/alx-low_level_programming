@@ -1,23 +1,29 @@
 #include <stdio.h>
 
 /**
- * main - print triple combos
+ * main - Prints all possible combinations of three different digits
  *
- * Description: print triple digit combos
- *
- * Return: Always 0 (Success)
+ * Return: Always 0.
  */
-
 int main(void)
 {
-	int i, j, k;
-
-	i = 48;
-	j = 48;
-	k = 48;
-	while (i < 58)
-	{
-		j = i + 1;
-		while (j < 58)
-		{
-			k = j +
+int digit1, digit2, digit3;
+for (digit1 = 0; digit1 < 8; digit1++)
+{
+for (digit2 = digit1 + 1; digit2 < 9; digit2++)
+{
+for (digit3 = digit2 + 1; digit3 < 10; digit3++)
+{
+putchar((digit1 % 10) + '0');
+putchar((digit2 % 10) + '0');
+putchar((digit3 % 10) + '0');
+if (digit1 == 7 && digit2 == 8 && digit3 == 9)
+continue;
+putchar(',');
+putchar(' ');
+}
+}
+}
+putchar('\n');
+return (0);
+}
