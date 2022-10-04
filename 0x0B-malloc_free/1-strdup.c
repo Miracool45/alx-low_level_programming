@@ -66,4 +66,4 @@ char *_strdup(char *str)
 
 	_strcpy(dst, str);
 	return (dst);
-}
+
