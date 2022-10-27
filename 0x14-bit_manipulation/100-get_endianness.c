@@ -1,19 +1,13 @@
 #include "main.h"
 
 /**
- * flip_bits - returns hamming distance of two bit words
- * which is the number of bits you would need to flip to get
- * from one number to another
- * @n: the first bit word
- * @m: the second bit word
- * Return: the hamming distance
+ * get_endianness - check the endian status
+ * Return: 1 if big 0 if little
  */
-unsigned int flip_bits(unsigned long int n, unsigned long int m)
+int get_endianness(void)
 {
-	int shift = (sizeof(n) * 8);
-	int dist = 0;
+	int x = 1;
+	char *c = (char *)(&x);
 
-	while (shift--)
-		dist += (n >> shift & 1) != (m >> shift & 1);
-	return (dist);
+	return (*c);
 }
